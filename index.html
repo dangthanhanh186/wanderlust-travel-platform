@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-slot="meta.title">Wanderlust — Showcase</title>
+  <meta name="description" content="Wanderlust — Hệ thống đặt vé và gợi ý du lịch thông minh.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true" data-slot="brand.logo"></div>
+        <h1 data-slot="brand.name">Wanderlust</h1>
+      </div>
+      <div class="cta" data-slot="nav.cta"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="card">
+        <div class="badges" data-slot="hero.badges"></div>
+        <h2 data-slot="hero.title">Tiêu đề dự án</h2>
+        <p class="lead" data-slot="hero.lead"></p>
+        <div class="kpi" data-slot="hero.kpis"></div>
+        <div class="foot" data-slot="hero.cta"></div>
+      </div>
+      <div class="media">
+        <img src="" alt="App mockup" class="hero-media" data-slot="hero.image">
+        <iframe title="Video demo Wanderlust" class="hero-media hero-video hidden" data-slot="hero.video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="section grid cols-3">
+      <div class="card">
+        <h3>Vấn đề (Problem)</h3>
+        <ul data-slot="problem.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Giải pháp (Solution)</h3>
+        <ul data-slot="solution.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Giá trị (Value)</h3>
+        <ul data-slot="value.items"></ul>
+      </div>
+    </section>
+
+    <section class="section grid cols-3">
+      <div class="card">
+        <h3>Lợi thế cạnh tranh</h3>
+        <ul data-slot="advantage.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Người dùng (Target Audience)</h3>
+        <ul data-slot="customer.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Nền tảng Hệ thống</h3>
+        <table>
+          <thead><tr><th>Thành phần</th><th>Công nghệ</th></tr></thead>
+          <tbody data-slot="metrics.rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="features" class="section card">
+      <h3>Tính năng cốt lõi</h3>
+      <div class="grid cols-3" data-slot="features.columns"></div>
+    </section>
+
+    <section id="architecture" class="section card">
+      <h3>System Architecture</h3>
+      <p class="muted" style="margin-top:0">Sơ đồ kiến trúc tổng thể mô tả luồng Frontend, Backend, Database và tích hợp dịch vụ ngoài.</p>
+      <img class="media" src="assets/image/System%20Architecture.drawio.png" alt="System Architecture Wanderlust" style="object-fit:contain;max-height:560px;">
+    </section>
+
+    <section id="screens" class="section">
+      <div class="card">
+        <h3>Ảnh màn hình & Chức năng</h3>
+        <div class="screens-wrap">
+          <div class="screens-group">
+            <h4>Người dùng (User)</h4>
+            <div class="screens-grid" data-slot="screenshots.user"></div>
+          </div>
+          <div class="screens-group">
+            <h4>Nhà cung cấp (Vendor)</h4>
+            <div class="screens-grid" data-slot="screenshots.vendor"></div>
+          </div>
+          <div class="screens-group">
+            <h4>Quản trị viên (Admin)</h4>
+            <div class="screens-grid" data-slot="screenshots.admin"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section grid cols-2">
+      <div class="card">
+        <h3>Công nghệ sử dụng (Tech Stack)</h3>
+        <ul data-slot="tech.items"></ul>
+      </div>
+      <div class="card">
+        <h3>Thành viên nhóm</h3>
+        <ul data-slot="team.members"></ul>
+      </div>
+    </section>
+
+    <section id="download" class="section grid cols-2">
+      <div class="card">
+        <h3>Liên kết hệ thống</h3>
+        <ul data-slot="links.items"></ul>
+      </div>
+      <div id="contact" class="card">
+        <h3>Liên hệ</h3>
+        <p data-slot="contact.primary"></p>
+        <p data-slot="contact.phone"></p>
+        <p class="muted" data-slot="footer.note"></p>
+      </div>
+    </section>
+  </main>
+
+  <script id="config" type="application/json">
+  {
+    "meta": {
+      "title": "Wanderlust — Travel Platform Showcase"
+    },
+    "brand": {
+      "name": "Wanderlust",
+      "logo": "assets/image/Logo.png"
+    },
+    "nav": {
+      "buttons": [
+        {
+          "label": "Live Demo",
+          "href": "https://wanderlut-travel-web.vercel.app",
+          "target": "_blank",
+          "variant": "primary"
+        },
+        {
+          "label": "API Health Check",
+          "href": "https://wanderlut-travel-web-production.up.railway.app/actuator/health",
+          "target": "_blank"
+        },
+        {
+          "label": "Video Demo",
+          "href": "https://drive.google.com/file/d/1LB6E8Uk9edQup8yZW25ZRgqngWsYNLYc/view?usp=sharing",
+          "target": "_blank"
+        }
+      ]
+    },
+    "hero": {
+      "badges": [
+        "Du lịch trọn gói",
+        "AI Gợi ý Lịch trình",
+        "Thanh toán an toàn"
+      ],
+      "title": "Wanderlust: Nền tảng đặt chỗ & du lịch thông minh",
+      "lead": "Khép kín vòng đời từ lập kế hoạch đến hậu mãi: Đặt vé máy bay, phòng khách sạn, thuê xe và hoạt động vui chơi với hệ thống OpenAI và Stripe tích hợp.",
+      "kpis": [
+        "Layered Architecture",
+        "JWT Security",
+        "Stripe Payment",
+        "Microservices-ready"
+      ],
+      "cta": [
+        {
+          "label": "Trải nghiệm Nền tảng",
+          "href": "https://wanderlut-travel-web.vercel.app",
+          "target": "_blank",
+          "variant": "primary"
+        },
+        {
+          "label": "Xem Video Demo",
+          "href": "https://drive.google.com/file/d/1LB6E8Uk9edQup8yZW25ZRgqngWsYNLYc/view?usp=sharing",
+          "target": "_blank"
+        }
+      ],
+      "video": "https://drive.google.com/file/d/1LB6E8Uk9edQup8yZW25ZRgqngWsYNLYc/preview",
+      "image": "assets/image/Giao diện trang thông tin về wanderlust.png"
+    },
+    "problem": {
+      "items": [
+        "Thông tin du lịch bị phân tán, người dùng mất nhiều thời gian tìm kiếm từ nhiều nguồn.",
+        "Khó khăn trong việc quản lý tập trung lịch trình và các mã booking.",
+        "Thiếu các gợi ý cá nhân hoá và dịch vụ tiện ích bổ sung (như Visa, E-Wallet).",
+        "Hạn chế trong việc hỗ trợ thanh toán đa kênh và hậu mãi (hoàn tiền)."
+      ]
+    },
+    "solution": {
+      "items": [
+        "Phát triển nền tảng tích hợp All-in-One xử lý vé, phòng khách sạn và dịch vụ.",
+        "Trang Dashboard quản lý tập trung các booking và lịch sử giao dịch.",
+        "Tích hợp OpenAI xử lý ngôn ngữ tự nhiên để gợi ý kế hoạch cá nhân hoá.",
+        "Triển khai Ví điện tử nội bộ và thanh toán tín dụng quốc tế an toàn."
+      ]
+    },
+    "value": {
+      "items": [
+        "Tiết kiệm tối đa thời gian lập kế hoạch cho khách du lịch.",
+        "Mang lại trải nghiệm liền mạch, an toàn với hiệu năng cao.",
+        "Cung cấp khả năng đo lường và theo dõi cho hệ thống đối tác Vendor."
+      ]
+    },
+    "advantage": {
+      "items": [
+        "Phân tách rõ ràng Frontend (ReactJS) và Backend (Spring Boot), dễ dàng mở rộng.",
+        "Tự động hoá xử lý trùng lịch và huỷ phòng qua Background Job (Scheduler).",
+        "Luồng thanh toán khép kín kết hợp xác thực Stripe Webhook."
+      ]
+    },
+    "customer": {
+      "items": [
+        "Khách du lịch cá nhân: Tìm kiếm tiện lợi, đặt chỗ trọn gói nhanh chóng.",
+        "Nhà cung cấp (Vendor): Đăng tải quản lý thông tin khách sạn, tour du lịch.",
+        "Quản trị viên (Admin): Giám sát hệ thống, kiểm duyệt đánh giá và hoàn tiền."
+      ]
+    },
+    "metrics": {
+      "rows": [
+        ["Frontend", "React 18, Vite, Tailwind CSS"],
+        ["Backend", "Java Spring Boot 3.4, Java 21"],
+        ["Database", "MongoDB Atlas"],
+        ["Server", "Vercel & Railway"]
+      ]
+    },
+    "features": {
+      "columns": [
+        {
+          "title": "Tìm kiếm & Booking",
+          "bullets": [
+            "Tìm kiếm vé máy bay, khách sạn, thuê xe với bộ lọc đa luồng.",
+            "Chọn chỗ ngồi trực quan trên sơ đồ (Seat Map).",
+            "Cơ chế chống trùng lịch (Double Booking)."
+          ]
+        },
+        {
+          "title": "Tài chính & Giao dịch",
+          "bullets": [
+            "Ví điện tử (E-Wallet) nạp, rút và thanh toán nội bộ.",
+            "Cổng thanh toán quốc tế Stripe (Sandbox).",
+            "Hệ thống tự động xử lý Voucher giảm giá."
+          ]
+        },
+        {
+          "title": "Hậu mãi & Thông minh",
+          "bullets": [
+            "Tích hợp Chatbot AI tư vấn lịch trình.",
+            "Xử lý khiếu nại và tự động hoàn tiền theo chính sách.",
+            "Đánh giá và cấp điểm thưởng Loyalty Points."
+          ]
+        }
+      ]
+    },
+    "screenshots": {
+      "user": [
+        { "src": "assets/image/Ảnh phần đăng ký.png", "alt": "Đăng ký tài khoản" },
+        { "src": "assets/image/Ảnh phần đăng nhập.png", "alt": "Đăng nhập tài khoản" },
+        { "src": "assets/image/Giao diện trang thông tin về wanderlust.png", "alt": "Trang thông tin về Wanderlust" },
+        { "src": "assets/image/Giao diện trang khách sạn có thanh tìm kiếm khách sạn.png", "alt": "Tìm kiếm khách sạn" },
+        { "src": "assets/image/Giao diện xem chi tiết khách sạn.png", "alt": "Xem chi tiết khách sạn" },
+        { "src": "assets/image/Giao diện đặt phòng khách sạn.png", "alt": "Đặt phòng khách sạn" },
+        { "src": "assets/image/Giao diện chọn chuyến bay.png", "alt": "Chọn chuyến bay" },
+        { "src": "assets/image/Giao diện điền thông tin vé máy bay chuẩn bị thanh toán.png", "alt": "Điền thông tin vé máy bay" },
+        { "src": "assets/image/Giao diện ví điện tử cá nhân của người dùng.png", "alt": "Ví điện tử cá nhân" },
+        { "src": "assets/image/Giao diện nạp ví điện tử người dùng.png", "alt": "Nạp ví điện tử" },
+        { "src": "assets/image/Giao diện thanh toán nạp ví điện tử với stripe.png", "alt": "Thanh toán nạp ví với Stripe" },
+        { "src": "assets/image/Giao diện ví vourcher người dùng nhận được.png", "alt": "Ví voucher của người dùng" },
+        { "src": "assets/image/Giao diện trang chủ Visa.png", "alt": "Trang chủ Visa" },
+        { "src": "assets/image/Giao diện hướng dẫn chi tiết làm visa.png", "alt": "Hướng dẫn chi tiết làm Visa" },
+        { "src": "assets/image/Viết bài đánh giá_ trang người dùng.png", "alt": "Viết bài đánh giá" },
+        { "src": "assets/image/Xác nhận hoàn thành dịch vụ_ trang người dùng.png", "alt": "Xác nhận hoàn thành dịch vụ" },
+        { "src": "assets/image/Giao diện thông tin cá nhân.png", "alt": "Thông tin cá nhân" },
+        { "src": "assets/image/Giao diện cài đặt tài khoảng.png", "alt": "Cài đặt tài khoản" },
+        { "src": "assets/image/Đổi ngôn ngữ tiếng Việt của i18n.png", "alt": "Đổi ngôn ngữ tiếng Việt" },
+        { "src": "assets/image/Đổi ngôn ngữ tiếng Anh của i18n.png", "alt": "Đổi ngôn ngữ tiếng Anh" },
+        { "src": "assets/image/Đổi ngôn ngữ tiếng Nhật của i18n.png", "alt": "Đổi ngôn ngữ tiếng Nhật" },
+        { "src": "assets/image/Đổi ngôn ngữ tiếng Hàn của i18n.png", "alt": "Đổi ngôn ngữ tiếng Hàn" }
+      ],
+      "vendor": [
+        { "src": "assets/image/Giao diện quản lý của Vendor.png", "alt": "Dashboard Vendor" },
+        { "src": "assets/image/Giao diện quản lý booking.png", "alt": "Vendor quản lý booking" },
+        { "src": "assets/image/Giao diện quản lý chuyển bay.png", "alt": "Vendor quản lý chuyến bay" }
+      ],
+      "admin": [
+        { "src": "assets/image/Giao diện quản lý của tài khoảng admin.png", "alt": "Dashboard Admin" },
+        { "src": "assets/image/Giao diện quản lý người dùng của tài khoảng admin.png", "alt": "Admin quản lý người dùng" },
+        { "src": "assets/image/Quản lý vourcher_trang admin.png", "alt": "Admin quản lý voucher" },
+        { "src": "assets/image/Duyệt dịch vụ_trang admin.png", "alt": "Admin duyệt dịch vụ" }
+      ]
+    },
+    "tech": {
+      "items": [
+        "Frontend: ReactJS, Vite, Tailwind CSS, Ant Design",
+        "Backend: Java Spring Boot, Spring Security, JWT (Stateless)",
+        "Database: MongoDB (NoSQL)",
+        "Công cụ khác: Stripe API, OpenAI API, Testcontainers, Figma"
+      ]
+    },
+    "team": {
+      "members": [
+        {
+          "name": "Đặng Thành Anh",
+          "role": "Sinh viên thực hiện"
+        },
+        {
+          "name": "Bùi Hoàng Quang Huy",
+          "role": "Sinh viên thực hiện"
+        },
+        {
+          "name": "TS. Trương Tuấn Anh",
+          "role": "Giảng viên hướng dẫn"
+        }
+      ]
+    },
+    "links": {
+      "items": [
+        {
+          "label": "Live Demo (Vercel)",
+          "href": "https://wanderlut-travel-web.vercel.app"
+        },
+        {
+          "label": "API Health Check (Railway)",
+          "href": "https://wanderlut-travel-web-production.up.railway.app/actuator/health",
+          "note": "Trả về UP nếu server đang chạy"
+        },
+        {
+          "label": "Video Demo (Google Drive)",
+          "href": "https://drive.google.com/file/d/1LB6E8Uk9edQup8yZW25ZRgqngWsYNLYc/view?usp=sharing"
+        }
+      ]
+    },
+    "contact": {
+      "primary": "Email: <a href='mailto:dangthanhanh186@gmail.com'>dangthanhanh186@gmail.com</a>",
+      "phone": "Số điện thoại: <a href='tel:09064828990'>09064828990</a>",
+      "footerNote": "2025 © Đồ án tốt nghiệp Khoa Khoa học & Kỹ thuật Máy tính - ĐH Bách Khoa TP.HCM"
+    }
+  }
+  </script>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Đóng">×</button>
+    <img id="lightbox-image" src="" alt="Ảnh phóng to">
+  </div>
+
+  <script>
+  (function(){
+    function fillText(slot, text) {
+      const el = document.querySelector(`[data-slot="${slot}"]`);
+      if (el && text != null) el.textContent = text;
+    }
+
+    function fillHTML(slot, html) {
+      const el = document.querySelector(`[data-slot="${slot}"]`);
+      if (el && html != null) el.innerHTML = html;
+    }
+
+    function fillImage(slot, src, alt) {
+      const el = document.querySelector(`[data-slot="${slot}"]`);
+      if (el && src) {
+        el.src = encodeURI(src);
+        if (alt) el.alt = alt;
+      }
+    }
+
+    function heroMedia(videoUrl, imageSrc) {
+      const iframe = document.querySelector('[data-slot="hero.video"]');
+      const img = document.querySelector('[data-slot="hero.image"]');
+      const hasVideo = iframe && typeof videoUrl === 'string' && videoUrl.trim().length > 0;
+      if (hasVideo) {
+        iframe.src = videoUrl;
+        iframe.classList.remove('hidden');
+        if (img) img.classList.add('hidden');
+        return;
+      }
+      if (img && imageSrc) {
+        img.classList.remove('hidden');
+        fillImage('hero.image', imageSrc, 'App mockup');
+      }
+    }
+
+    function listToUL(slot, items) {
+      const ul = document.querySelector(`[data-slot="${slot}"]`);
+      if (!ul || !Array.isArray(items)) return;
+      ul.innerHTML = items.map(li => `<li>${li}</li>`).join("");
+    }
+
+    function chips(slot, items) {
+      const wrap = document.querySelector(`[data-slot="${slot}"]`);
+      if (!wrap || !Array.isArray(items)) return;
+      wrap.innerHTML = items.map(t => `<div class="chip">${t}</div>`).join("");
+    }
+
+    function badges(slot, items) {
+      const wrap = document.querySelector(`[data-slot="${slot}"]`);
+      if (!wrap || !Array.isArray(items)) return;
+      wrap.innerHTML = items.map(t => `<span class="badge">${t}</span>`).join("");
+    }
+
+    function tableRows(slot, rows) {
+      const tbody = document.querySelector(`[data-slot="${slot}"]`);
+      if (!tbody || !Array.isArray(rows)) return;
+      tbody.innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("");
+    }
+
+    function featuresCols(slot, cols) {
+      const grid = document.querySelector(`[data-slot="${slot}"]`);
+      if (!grid || !Array.isArray(cols)) return;
+      grid.innerHTML = cols.map(c => `
+        <div>
+          <p class="pill">${c.title ?? ""}</p>
+          <ul>${(c.bullets||[]).map(b=>`<li>${b}</li>`).join("")}</ul>
+        </div>
+      `).join("");
+    }
+
+    function screenshots(slot, items) {
+      const grid = document.querySelector(`[data-slot="${slot}"]`);
+      if (!grid || !Array.isArray(items)) return;
+      grid.innerHTML = items.map(i => `
+        <figure class="screen-item">
+          <button class="screen-open" type="button" data-full="${encodeURI(i.src)}" data-alt="${(i.alt || '').replace(/"/g, '&quot;')}">
+            <img src="${encodeURI(i.src)}" alt="${i.alt||""}" class="media screen-img">
+          </button>
+          <figcaption>${i.alt || ''}</figcaption>
+        </figure>
+      `).join("");
+    }
+
+    function setupLightbox() {
+      const modal = document.getElementById('lightbox');
+      const modalImg = document.getElementById('lightbox-image');
+      const closeBtn = modal?.querySelector('.lightbox-close');
+      if (!modal || !modalImg || !closeBtn) return;
+
+      document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.screen-open');
+        if (btn) {
+          modalImg.src = btn.getAttribute('data-full') || '';
+          modalImg.alt = btn.getAttribute('data-alt') || 'Ảnh phóng to';
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('no-scroll');
+          return;
+        }
+        if (e.target === modal || e.target === closeBtn) {
+          modal.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('no-scroll');
+          modalImg.src = '';
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+          modal.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.classList.remove('no-scroll');
+          modalImg.src = '';
+        }
+      });
+    }
+
+    function links(slot, items) {
+      const ul = document.querySelector(`[data-slot="${slot}"]`);
+      if (!ul || !Array.isArray(items)) return;
+      ul.innerHTML = items.map(i => {
+        const note = i.note ? ` — <span class="muted">${i.note}</span>` : "";
+        return `<li>${i.label}: <a href="${i.href}" target="_blank" rel="noopener">${i.href}</a>${note}</li>`;
+      }).join("");
+    }
+
+    function team(slot, members) {
+      const ul = document.querySelector(`[data-slot="${slot}"]`);
+      if (!ul || !Array.isArray(members)) return;
+      ul.innerHTML = members.map(m => `<li><b>${m.name}</b> — ${m.role || ""}</li>`).join("");
+    }
+
+    function navButtons(slot, buttons) {
+      const wrap = document.querySelector(`[data-slot="${slot}"]`);
+      if (!wrap || !Array.isArray(buttons)) return;
+      wrap.innerHTML = buttons.map(b => {
+        const cls = `btn ${b.variant === 'primary' ? 'primary' : ''}`;
+        const tgt = b.target ? ` target="${b.target}" rel="noopener"` : "";
+        return `<a class="${cls}" href="${b.href}"${tgt}>${b.label}</a>`;
+      }).join("");
+    }
+
+    let cfg = {};
+    try { cfg = JSON.parse(document.getElementById('config').textContent); }
+    catch(e){ console.warn("Config JSON invalid", e); cfg = {}; }
+
+    if (cfg.meta?.title) { document.title = cfg.meta.title; fillText("meta.title", cfg.meta.title); }
+    fillText("brand.name", cfg.brand?.name || "ProjectName");
+    if (cfg.brand?.logo) { document.querySelector('[data-slot="brand.logo"]').style.backgroundImage = `url('${encodeURI(cfg.brand.logo)}')`; }
+
+    navButtons("nav.cta", cfg.nav?.buttons || []);
+    badges("hero.badges", cfg.hero?.badges || []);
+    fillText("hero.title", cfg.hero?.title || "Tiêu đề dự án");
+    fillText("hero.lead", cfg.hero?.lead || "");
+    chips("hero.kpis", cfg.hero?.kpis || []);
+    navButtons("hero.cta", cfg.hero?.cta || []);
+    heroMedia(cfg.hero?.video || "", cfg.hero?.image || "");
+
+    listToUL("problem.items", cfg.problem?.items || []);
+    listToUL("solution.items", cfg.solution?.items || []);
+    listToUL("value.items", cfg.value?.items || []);
+    listToUL("advantage.items", cfg.advantage?.items || []);
+    listToUL("customer.items", cfg.customer?.items || []);
+    tableRows("metrics.rows", cfg.metrics?.rows || []);
+    featuresCols("features.columns", cfg.features?.columns || []);
+    screenshots("screenshots.user", cfg.screenshots?.user || []);
+    screenshots("screenshots.vendor", cfg.screenshots?.vendor || []);
+    screenshots("screenshots.admin", cfg.screenshots?.admin || []);
+    listToUL("tech.items", cfg.tech?.items || []);
+    team("team.members", cfg.team?.members || []);
+    links("links.items", cfg.links?.items || []);
+    fillHTML("contact.primary", cfg.contact?.primary || "");
+    fillHTML("contact.phone", cfg.contact?.phone || "");
+    fillText("footer.note", cfg.contact?.footerNote || "");
+    setupLightbox();
+  })();
+  </script>
+</body>
+</html>
